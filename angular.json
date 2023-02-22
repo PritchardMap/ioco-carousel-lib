@@ -1,7 +1,42 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "60eff270-57b8-43eb-80f7-1984df2acb0c"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ioco-carousel-lib": {
+      "projectType": "library",
+      "root": "projects/ioco-carousel-lib",
+      "sourceRoot": "projects/ioco-carousel-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ioco-carousel-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ioco-carousel-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ioco-carousel-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ioco-carousel-lib/src/test.ts",
+            "tsConfig": "projects/ioco-carousel-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/ioco-carousel-lib/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ioco-carousel-lib"
 }
