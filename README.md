@@ -6,7 +6,7 @@
 npm install ioco-carousel-lib
 ```
 
-### Sub Module Import
+### Module Import
 
 ```typescript
 import { IocoCarouselLibModule } from "ioco-carousel-lib";
@@ -14,7 +14,6 @@ import { IocoCarouselLibModule } from "ioco-carousel-lib";
 @NgModule({
   imports: [
     // ...
-
     IocoCarouselLibModule,
   ],
 })
